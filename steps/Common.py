@@ -38,7 +38,9 @@ class Common(object):
 
         result = []
         for ret in callback.result():
+            print(ret)
             for vertex in ret:
+                print(vertex)
                 data = self._format_graph_fields(vertex)
                 result.append(data)
 
