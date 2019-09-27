@@ -25,7 +25,7 @@ class AddVertex(object):
         self.g = Graph(graph_tag)
 
     def run(self):
-        """ 创建一个 person 类型的顶点并设置 name """
+        """ 创建一个 person 类型的顶点并设置 id 和 name """
         dsl = "g.addV('person').property(id, uid).property('name', name)"
         bindings = {"name": "stephen", "uid": "1"}
 
