@@ -37,6 +37,7 @@ class Common(object):
         callback = self.g.exec_dsl(dsl)
 
         result = []
+        print(callback.result())
         for ret in callback.result():
             print(ret)
             for vertex in ret:
