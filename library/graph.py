@@ -129,7 +129,7 @@ class Graph(object):
         # 屏蔽 drop() 语句
         assert dsl.find('drop') == -1, 'drop operation is forbidden'
 
-        return self.__client.submitAsync(dsl, bindings)
+        return self.__client.submitAsync(dsl, bindings).result()
 
     @classmethod
     def add_extra_properties(cls, properties_dsl, properties, bindings):

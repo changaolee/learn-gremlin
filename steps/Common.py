@@ -21,7 +21,6 @@ class Common(object):
         self.g = Graph(graph_tag)
 
     def show_graph(self):
-        time.sleep(1)  # 确保之前的操作已处理
         vertex_list = self._get_vertex()
         edge_list = self._get_edge()
 
@@ -39,13 +38,10 @@ class Common(object):
         callback = self.g.exec_dsl(dsl)
 
         result = []
-        # print(callback.result())
-        for ret in callback.result():
-            # print(ret)
+        for ret in callback:
             for vertex in ret:
-                # print(vertex)
-                # data = self._format_graph_fields(vertex)
-                result.append(vertex)
+                data = self._format_graph_fields(vertex)
+                result.append(data)
 
         return result
 
@@ -54,7 +50,7 @@ class Common(object):
         callback = self.g.exec_dsl(dsl)
 
         result = []
-        for ret in callback.result():
+        for ret in callback:
             for edge in ret:
                 data = self._format_graph_fields(edge)
                 result.append(data)
