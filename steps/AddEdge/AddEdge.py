@@ -4,6 +4,10 @@
 # @time: 2019-09-27 15:41
 # @reference: [http://tinkerpop-gremlin.cn/#addedge-step]
 
+import sys
+
+sys.path.append("../../")
+
 from library.graph import Graph
 
 
@@ -18,4 +22,3 @@ class AddEdge(object):
 
     def __init__(self, graph_tag):
         self.g = Graph(graph_tag)
-

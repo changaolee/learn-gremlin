@@ -4,6 +4,10 @@
 # @time: 2019-09-27 15:44
 # @reference: [http://tinkerpop-gremlin.cn/#addvertex-step]
 
+import sys
+
+sys.path.append("../../")
+
 from library.graph import Graph
 from steps.Common import Common
 
@@ -27,3 +31,7 @@ class AddVertex(object):
 
         self.g.exec_dsl(dsl, bindings)
         Common.get_instance().show_graph()
+
+
+if __name__ == "__main__":
+    AddVertex.get_instance().run()
