@@ -135,21 +135,24 @@ class Graph(object):
     def add_extra_properties(cls, properties_dsl, properties, bindings):
         add_properties_dsl, update_properties_dsl = properties_dsl, properties_dsl
 
-        # 默认 is_deleted 被设置为 0
-        if "is_deleted" not in properties:
-            add_properties_dsl += ".property('is_deleted', c_is_deleted)"
-            update_properties_dsl += ".property('is_deleted', c_is_deleted)"
-            bindings["c_is_deleted"] = 0
-
-        current_timestamp = int(time.time())
-
-        # 插入操作更新 ctime，utime 默认为 0
-        add_properties_dsl += ".property('ctime', c_ctime).property('utime', c_utime_default)"
-        bindings["c_ctime"] = current_timestamp
-        bindings["c_utime_default"] = 0
-
-        # 更新操作只更新 utime
-        update_properties_dsl += ".property('utime', c_utime)"
-        bindings["c_utime"] = current_timestamp
-
         return add_properties_dsl, update_properties_dsl
+
+        # TODO：可根据需要为顶点/边添加公共属性
+        # # 默认 is_deleted 被设置为 0
+        # if "is_deleted" not in properties:
+        #     add_properties_dsl += ".property('is_deleted', c_is_deleted)"
+        #     update_properties_dsl += ".property('is_deleted', c_is_deleted)"
+        #     bindings["c_is_deleted"] = 0
+        #
+        # current_timestamp = int(time.time())
+        #
+        # # 插入操作更新 ctime，utime 默认为 0
+        # add_properties_dsl += ".property('ctime', c_ctime).property('utime', c_utime_default)"
+        # bindings["c_ctime"] = current_timestamp
+        # bindings["c_utime_default"] = 0
+        #
+        # # 更新操作只更新 utime
+        # update_properties_dsl += ".property('utime', c_utime)"
+        # bindings["c_utime"] = current_timestamp
+        #
+        # return add_properties_dsl, update_properties_dsl
