@@ -10,6 +10,7 @@ import time
 
 class Common(object):
     _instances = {}
+    WAITING_TIME = 1
 
     @classmethod
     def get_instance(cls, graph_tag='default'):
@@ -21,6 +22,8 @@ class Common(object):
         self.g = Graph(graph_tag)
 
     def show_graph(self):
+        time.sleep(Common.WAITING_TIME)
+
         vertex_list = self._get_vertex()
         edge_list = self._get_edge()
 
@@ -38,7 +41,7 @@ class Common(object):
         callback = self.g.exec_dsl(dsl)
 
         result = []
-        for ret in callback:
+        for ret in callback.result():
             for vertex in ret:
                 data = self._format_graph_fields(vertex)
                 result.append(data)
@@ -50,7 +53,7 @@ class Common(object):
         callback = self.g.exec_dsl(dsl)
 
         result = []
-        for ret in callback:
+        for ret in callback.result():
             for edge in ret:
                 data = self._format_graph_fields(edge)
                 result.append(data)

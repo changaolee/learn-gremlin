@@ -29,7 +29,7 @@ class AddVertex(object):
         dsl = "g.addV('person').property(id, uid).property('name', name)"
         bindings = {"name": "stephen", "uid": "1"}
 
-        callback =self.g.exec_dsl(dsl, bindings)
+        self.g.exec_dsl(dsl, bindings)
         Common.get_instance().show_graph()
 
 
