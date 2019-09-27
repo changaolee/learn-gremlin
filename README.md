@@ -5,7 +5,7 @@
 ## Steps
 
 - [ ] AddEdge Step
-- [x] [AddVertex Step](./steps/AddVertex/README.md)
+- [x] [AddVertex Step](./steps/AddVertex)
 - [ ] AddProperty Step
 - [ ] Aggregate Step
 - [ ] And Step
