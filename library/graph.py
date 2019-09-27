@@ -117,7 +117,7 @@ class Graph(object):
 
         return result
 
-    def query_dsl(self, dsl, bindings=None):
+    def exec_dsl(self, dsl, bindings=None):
         """
         自定义查询语句，模版化参数，最大程度利用服务端 DSL 解析的缓存能力，加速查询的处理过程
         :param dsl: DSL 模板
@@ -129,7 +129,7 @@ class Graph(object):
         # 屏蔽 drop() 语句
         assert dsl.find('drop') == -1, 'drop operation is forbidden'
 
-        return self.__client.submitAsync(dsl, bindings)
+        return self.__client.submitAsync(dsl, bindings).result()
 
     @classmethod
     def add_extra_properties(cls, properties_dsl, properties, bindings):
