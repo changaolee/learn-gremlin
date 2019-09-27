@@ -26,10 +26,10 @@ class AddVertex(object):
 
     def run(self):
         """ 创建一个 person 类型的顶点并设置 name """
-        dsl = "g.addV('person').property('name', name)"
-        bindings = {"name": "stephen"}
+        dsl = "g.addV('person').property(id, uid).property('name', name)"
+        bindings = {"name": "stephen", "uid": "1"}
 
-        self.g.exec_dsl(dsl, bindings)
+        self.g.exec_dsl(dsl, bindings).result()
         Common.get_instance().show_graph()
 
 
