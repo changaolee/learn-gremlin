@@ -39,7 +39,7 @@ class AddEdge(object):
             "uid_2": "2", "name_2": "stephen"
         }
 
-        ret = self.g.exec_dsl(dsl, bindings).result()
+        ret = self.g.exec_dsl(dsl, bindings).result().next()
         print(ret)
 
         # 给两个 person 顶点添加 knows 类型的边
@@ -50,7 +50,7 @@ class AddEdge(object):
             "from_uid": "1", "to_uid": "2"
         }
 
-        ret = self.g.exec_dsl(dsl, bindings).result()
+        ret = self.g.exec_dsl(dsl, bindings).result().next()
         print(ret)
 
         Common.get_instance().show_graph()
