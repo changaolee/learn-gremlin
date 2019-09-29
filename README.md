@@ -6,7 +6,7 @@
 
 - [x] [AddEdge Step](./steps/AddEdge)：添加边
 - [x] [AddVertex Step](./steps/AddVertex)：添加顶点
-- [ ] AddProperty Step
+- [x] AddProperty Step：参考 [AddEdge Step](./steps/AddEdge)、[AddVertex Step](./steps/AddVertex)
 - [ ] Aggregate Step
 - [ ] And Step
 - [ ] As Step
