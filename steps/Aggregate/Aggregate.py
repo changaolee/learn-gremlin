@@ -70,7 +70,7 @@ class Aggregate(object):
                 values('name')
         """
         bindings = {
-            "uid_1": "u1", "uid_2": "u2"
+            "uid_1": "u1"
         }
 
         self.g.exec_dsl(dsl, bindings)
