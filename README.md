@@ -5,7 +5,7 @@
 ## Steps
 
 - [ ] AddEdge Step
-- [x] [AddVertex Step](./steps/AddVertex)
+- [x] [AddVertex Step](./steps/AddVertex)：添加顶点
 - [ ] AddProperty Step
 - [ ] Aggregate Step
 - [ ] And Step
