@@ -54,15 +54,27 @@ class Aggregate(object):
         # 添加三条边： marko-like->song-A；stephen-like-song-A；stephen-like-song-B
         dsl = """
             g.V(uid_1).addE('like').to(V(song_id_1)).
+                property(id, edge_id_1).
               V(uid_2).addE('like').to(V(song_id_1)).
-              V(uid_2).addE('like').to(V(song_id_2))
+                property(id, edge_id_2).
+              V(uid_2).addE('like').to(V(song_id_2)).
+                property(id, edge_id_3)
         """
+        bindings = {
+            "uid_1": "u1", "name_1": "marko",
+            "uid_2": "u2", "name_2": "stephen",
+            "song_id_1": "s1", "song_name_1": "song-A",
+            "song_id_2": "s2", "song_name_2": "song-B",
+            "edge_id_1": "u1-like-song-A",
+            "edge_id_2": "u2-like-song-A",
+            "edge_id_3": "u2-like-song-B"
+        }
 
         ret = self.g.exec_dsl(dsl, bindings).result().next()
         print(ret)
 
     def run(self):
-        # 找到与 marko 有共同兴趣的人还喜欢哪些 marko 还没喜欢的 歌曲
+        # 找到与 marko 有共同兴趣的人还喜欢哪些 marko 没喜欢的歌曲
         dsl = """
             g.V(uid_1).out('like').aggregate('x').
                 in('like').out('like').
