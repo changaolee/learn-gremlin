@@ -44,10 +44,13 @@ class AddEdge(object):
 
         # 给两个 person 顶点添加 knows 类型的边
         dsl = """
-            g.V(from_uid).addE('knows').to(V(to_uid))
+            g.V(from_uid).addE('knows').to(V(to_uid)).
+                property(id, edge_id)
         """
         bindings = {
-            "from_uid": "1", "to_uid": "2"
+            "from_uid": "1",
+            "to_uid": "2",
+            "edge_id": "1-knows-2"
         }
 
         ret = self.g.exec_dsl(dsl, bindings).result().next()
