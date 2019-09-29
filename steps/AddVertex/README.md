@@ -6,11 +6,11 @@
 
 ### DSL 语句
 
-```gremlin
-g.addV('person').property(id, uid).property('name', name)
-```
+创建一个 **person** 类型的顶点，并指定 *id* 和 *name*。
 
-这里创建了一个 **person** 类型的顶点，并指定 *id* 和 *name*。
+```gremlin
+g.addV('person').property(id, '1').property('name', 'stephen')
+```
 
 ### 操作结果
 ```

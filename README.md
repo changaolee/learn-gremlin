@@ -4,7 +4,7 @@
 
 ## Steps
 
-- [ ] AddEdge Step
+- [x] [AddEdge Step](./steps/AddEdge)：添加边
 - [x] [AddVertex Step](./steps/AddVertex)：添加顶点
 - [ ] AddProperty Step
 - [ ] Aggregate Step
@@ -84,3 +84,7 @@
 - [ ] Vertex Steps
 - [ ] Where Step
 - [ ] With Step
+
+## License
+
+[The MIT License (MIT)](./LICENSE)
