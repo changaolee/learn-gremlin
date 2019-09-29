@@ -6,7 +6,9 @@
 
 ### DSL 语句
 
-1. 创建两个 **person** 类型的顶点（参考：[AddVertex Step](../AddVertex)）。
+#### 初始化
+
+创建两个 **person** 类型的顶点。
 
 ```gremlin
 g.addV('person').
@@ -17,7 +19,9 @@ g.addV('person').
     property('name', 'stephen')
 ```
 
-2. 给第一步创建的两个顶点之间添加 **knows** 类型的边，并指定 *id*。
+#### 测试
+
+给两个顶点之间添加 **knows** 类型的边，并指定 *id*。
 
 ```gremlin
 g.V('1').addE('knows').to(V('2')).

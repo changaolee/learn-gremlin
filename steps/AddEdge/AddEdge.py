@@ -23,8 +23,9 @@ class AddEdge(object):
 
     def __init__(self, graph_tag):
         self.g = Graph(graph_tag)
+        self.mock_data()
 
-    def run(self):
+    def mock_data(self):
         # 创建两个 person 类型的顶点并设置 id 和 name
         dsl = """
             g.addV('person').
@@ -42,6 +43,7 @@ class AddEdge(object):
         ret = self.g.exec_dsl(dsl, bindings).result().next()
         print(ret)
 
+    def run(self):
         # 给两个 person 顶点添加 knows 类型的边
         dsl = """
             g.V(from_uid).addE('knows').to(V(to_uid)).
