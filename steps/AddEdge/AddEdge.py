@@ -9,6 +9,7 @@ import sys
 sys.path.append("../../")
 
 from library.graph import Graph
+from steps.Common import Common
 
 
 class AddEdge(object):
@@ -22,3 +23,36 @@ class AddEdge(object):
 
     def __init__(self, graph_tag):
         self.g = Graph(graph_tag)
+
+    def run(self):
+        # 创建两个 person 类型的顶点并设置 id 和 name
+        dsl = """
+            g.addV('person').
+                property(id, uid_1).
+                property('name', name_1).
+              addV('person').
+                property(id, uid_2).
+                property('name', name_2)
+        """
+        bindings = {
+            "uid_1": "1", "name_1": "marko",
+            "uid_2": "2", "name_2": "stephen"
+        }
+
+        self.g.exec_dsl(dsl, bindings)
+
+        # 给两个 person 顶点添加 knows 类型的边
+        dsl = """
+            g.V(from_uid).addE('knows').to(V(to_uid))
+        """
+        bindings = {
+            "from_uid": "1", "to_uid": "2"
+        }
+
+        self.g.exec_dsl(dsl, bindings)
+
+        Common.get_instance().show_graph()
+
+
+if __name__ == "__main__":
+    AddEdge.get_instance().run()
