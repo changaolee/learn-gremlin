@@ -4,41 +4,75 @@
 
 ## Steps
 
+由于官方文档对 Steps 的说明是依照字母顺序展示的，不利于初学者学习，这里按照我自己的理解对 Steps 的难度进行了初步划分。
+
+划分标准包括 Step 的使用频率、使用难度等，理论上初级、中级两部分的 Steps 足以满足大部分查询场景。
+
+### 初级 Steps
+
 - [x] [AddEdge Step](./steps/AddEdge)：添加边
 - [x] [AddVertex Step](./steps/AddVertex)：添加顶点
 - [x] [AddProperty Step](./steps/AddProperty)：添加属性
-- [x] [Aggregate Step](./steps/Aggregate)：对象聚合
 - [ ] And Step
 - [ ] As Step
-- [ ] Barrier Step
 - [ ] By Step
-- [ ] Cap Step
+- [ ] Count Step
+- [ ] Dedup Step
+- [ ] From Step
+- [ ] Has Step
+- [ ] Id Step
+- [ ] Is Step
+- [ ] Label Step
+- [ ] Limit Step
+- [ ] To Step
+- [ ] Value Step
+- [ ] ValueMap Step
+- [ ] Values Step
+- [ ] Vertex Steps
+- [ ] Where Step
+
+
+### 中级 Steps
+
+- [x] [Aggregate Step](./steps/Aggregate)：对象聚合
 - [ ] Choose Step
+- [ ] Fold Step
+- [ ] Group Step
+- [ ] GroupCount Step
+- [ ] Inject Step
+- [ ] Or Step
+- [ ] Order Step
+- [ ] Path Step
+- [ ] Project Step
+- [ ] Range Step
+- [ ] Repeat Step
+- [ ] Not Step
+- [ ] Select Step
+- [ ] Skip Step
+- [ ] Sum Step
+- [ ] Unfold Step
+- [ ] Union Step
+- [ ] Until Step
+- [ ] With Step
+
+### 高级 Steps
+
+- [ ] Barrier Step
+- [ ] Cap Step
 - [ ] Coalesce Step
 - [ ] Coin Step
 - [ ] ConnectedComponent Step
 - [ ] Constant Step
-- [ ] Count Step
 - [ ] CyclicPath Step
 - [ ] Dedup Step
 - [ ] Drop Step
 - [ ] Emit Step
 - [ ] Explain Step
-- [ ] Fold Step
-- [ ] From Step
 - [ ] Graph Step
-- [ ] Group Step
-- [ ] GroupCount Step
-- [ ] Has Step
-- [ ] Id Step
 - [ ] Identity Step
 - [ ] Index Step
-- [ ] Inject Step
 - [ ] IO Step
-- [ ] Is Step
 - [ ] Key Step
-- [ ] Label Step
-- [ ] Limit Step
 - [ ] Local Step
 - [ ] Loops Step
 - [ ] Match Step
@@ -47,43 +81,23 @@
 - [ ] Mean Step
 - [ ] Min Step
 - [ ] None Step
-- [ ] Not Step
 - [ ] Option Step
 - [ ] Optional Step
-- [ ] Or Step
-- [ ] Order Step
 - [ ] PageRank Step
-- [ ] Path Step
 - [ ] PeerPressure Step
 - [ ] Profile Step
-- [ ] Project Step
 - [ ] Program Step
 - [ ] Properties Step
 - [ ] PropertyMap Step
-- [ ] Range Step
-- [ ] Repeat Step
 - [ ] Sack Step
 - [ ] Sample Step
-- [ ] Select Step
 - [ ] ShortestPath step
 - [ ] SimplePath Step
-- [ ] Skip Step
 - [ ] Store Step
 - [ ] Subgraph Step
-- [ ] Sum Step
 - [ ] Tail Step
 - [ ] TimeLimit Step
-- [ ] To Step
 - [ ] Tree Step
-- [ ] Unfold Step
-- [ ] Union Step
-- [ ] Until Step
-- [ ] Value Step
-- [ ] ValueMap Step
-- [ ] Values Step
-- [ ] Vertex Steps
-- [ ] Where Step
-- [ ] With Step
 
 ## License
 
