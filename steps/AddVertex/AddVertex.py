@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #
 # @author: braincy
-# @time: 2019-09-27 15:44
+# @time: 2019-09-27
 # @reference: [http://tinkerpop-gremlin.cn/#addvertex-step]
 
 import sys
