@@ -16,7 +16,7 @@ g.addV('person')
 
 #### 测试
 
-1. 给 **person** 类型的顶点添加 *name* 和 *age* 属性。
+给 **person** 类型的顶点添加 *name* 和 *age* 属性。
 
 ```gremlin
 g.V().hasLabel("person").
@@ -24,18 +24,10 @@ g.V().hasLabel("person").
     property('age', 25)
 ```
 
-2. 使用 `properties()` 查询指定字段。
-
-```gremlin
-g.V().properties('age').valueMap(true)
-```
-
 ### 操作结果
 ```
 gremlin> g.V().valueMap(true)
 ==>[id:ff6f2633-8319-4e7c-b42b-475b20dbcdc8,label:person,age:[25],name:[stephen]]
-gremlin> g.V().properties('age').valueMap(true)
-==>[id:ff6f2633-8319-4e7c-b42b-475b20dbcdc8,key:age,value:25]
 ```
 
 ```json
