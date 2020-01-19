@@ -1,4 +1,4 @@
-# gremlin-examples
+# Gremlin 语法学习
 
 参考官方 Gremlin 文档，对其中的语法进行代码演示。
 
