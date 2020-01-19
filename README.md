@@ -39,7 +39,7 @@ gremlin> g.V().count()
 | [AddEdge Step](./steps/AddEdge) | 添加边 |
 | [AddVertex Step](./steps/AddVertex) | 添加点 |
 | [AddProperty Step](./steps/AddProperty) | 添加属性 |
-| And Step | |
+| [And Step](./steps/And) | "与" 查询 |
 | As Step | |
 | By Step | |
 | Count Step | |

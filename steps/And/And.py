@@ -26,13 +26,36 @@ class And(object):
         self.mock_data()
 
     def mock_data(self):
-        pass
+        # 创建两个 person 类型的顶点
+        dsl = """
+            g.addV('person').
+                property(id, uid_1).
+                property('age', age_1).
+              addV('person').
+                property(id, uid_2).
+                property('age', age_2)
+        """
+        bindings = {
+            "uid_1": 1, "age_1": 20,
+            "uid_2": 2, "age_2": 25
+        }
+
+        ret = self.g.exec_dsl(dsl, bindings).result().next()
+        print(ret)
 
     def run(self):
-        dsl = ""
-        bindings = {}
+        dsl = """
+            g.V().has('age', inside(start_1, end_1)).
+                and().
+                has('age', outside(start_2, end_2)).
+            values('age')
+        """
+        # (10, 30) 与 (-∞, 15) U (20, +∞) 的交集 => 25
+        bindings = {'start_1': 10, 'end_1': 30, 'start_2': 15, 'end_2': 20}
 
-        self.g.exec_dsl(dsl, bindings)
+        vertex_list = self.g.exec_dsl(dsl, bindings).result().next()
+        print("ans: {}".format(vertex_list))
+
         Common.get_instance().show_graph()
 
 
