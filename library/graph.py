@@ -1,7 +1,6 @@
 from gremlin_python.driver import client
 from config.graph import vertex_properties, edge_properties
 from config.settings import auth_config
-import time
 
 
 class Graph(object):
