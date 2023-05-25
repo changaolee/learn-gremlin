@@ -2,4 +2,4 @@ aenum==2.2.3
 gremlinpython==3.4.4
 isodate==0.6.0
 six==1.14.0
-tornado==4.5.3
+tornado==6.3.2
